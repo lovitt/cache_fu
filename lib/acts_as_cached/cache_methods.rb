@@ -209,7 +209,7 @@ module ActsAsCached
       if ActsAsCached.config[:raise_errors]
         raise error
       else
-        RAILS_DEFAULT_LOGGER.debug "MemCache Error: #{error.message}" rescue nil
+        RAILS_DEFAULT_LOGGER.error "MemCache Error: #{error.message}" rescue nil
         nil
       end      
     end
